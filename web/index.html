@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Age Validation Example</title>
+    </head>
+    <body>
+        <label for="txtAge">Enter Age:</label>
+        <input id="txtAge" type="text">
+        <br>
+        <span id="validations" style="color:red;"></span>
+        <script>
+            var min = 5;
+            var max = 45;
+            var txtAge = document.querySelector('#txtAge');
+            var validationPlaceholder = document.querySelector('#validations');
+            txtAge.addEventListener('blur', function(){
+                var val = parseFloat(this.value);
+                validationPlaceholder.innerHTML='';
+                if (val < min || val > max){
+                    validationPlaceholder.innerHTML = "Value should be between 5 and 45.";
+                }
+            });
+        </script>
+    </body>
+</html>
